@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patryk Lickowski | Portfolio</title>
+    <link rel="stylesheet" href="{% static "css/base-styles.css" %}">
+    <link rel="icon" href="{% static "assets/favicon.png" %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />   
+</head>
+<body id="body">
+    <header class="header">
+        <div class="logo"><a href="#home">Patryk <span>Lickowski</span></a></div>
+        <input type="checkbox" id="check"/>
+        <label for="check" class="icons">
+            <i class="ri-menu-line" id="menu-btn"></i>
+            <i class='bx bx-x' id="close-btn"></i>
+        </label>
+        <nav class="navbar">
+            <a href="#home" style="--i:0;">Home</a>
+            <a href="#about" style="--i:1;">About Me</a>
+            <a href="#projects" style="--i:2;">Projects</a>
+            <a href="#contact" style="--i:3;">Contact</a>
+        </nav>      
+    </header>
+    {% block content %}
+    {% endblock%}
+    <footer>
+        <div class="footer-container">
+            <p>Copyright <span>&copy;</span> 2024 Patryk Lickowski</p>
+        </div>
+    </footer>
+    <script src="js/base.js"></script>
+</body>
+</html>
