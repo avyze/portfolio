@@ -14,7 +14,9 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
     rel="stylesheet"
     />   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all.min.css">
 </head>
+<div id="particles-js"></div>
 <body id="body">
     <header class="header">
         <div class="logo"><a href="#home">Patryk <span>Lickowski</span></a></div>
@@ -27,8 +29,8 @@
             <a href="#home" style="--i:0;">Home</a>
             <a href="#about" style="--i:1;">About Me</a>
             <a href="#projects" style="--i:2;">Projects</a>
-            <a href="#contact" style="--i:3;">Contact</a>
-        </nav>      
+            <a href="#contact" class="hire-btn" style="--i:3;">Hire Me</a> 
+        </nav>
     </header>
     {% block content %}
     {% endblock%}
@@ -37,6 +39,7 @@
             <p>Copyright <span>&copy;</span> 2024 Patryk Lickowski</p>
         </div>
     </footer>
-    <script src="js/base.js"></script>
+    <script src="static/js/base.js"></script>
+    
 </body>
 </html>

@@ -3,126 +3,109 @@
 {% block head %}
 <link rel="stylesheet" href="{% static "css/base-styles.css" %}">
 <link rel="stylesheet" href="{% static "css/home-styles.css" %}">
-{% endblock%}
+<!-- Include Fira Code font -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<!-- Include Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+{% endblock %}
 {% block content %}
+<div id="particles-js"></div>
 <div class="main-content" id="home">
     <div class="home-container">
-        <div class="image-container">
-            <img src="{% static "assets/home-banner.png" %}" alt="" srcset="">
+        <!-- Left side: Profile Image -->
+        
+        <div class="about-image">
+            <img src="static/assets/icons.png" alt="icons" />
         </div>
         <div class="text-container">
             <div class="title">
-                <h1>Hey!👋 I am a <span></span></h1>
+                <h1>Hey! 👋 I am a <span class="highlight"></span></h1>
             </div>
             <div class="text-content">
                 <div class="sub-title">
                     <h2>Welcome to my <span>portfolio!</span></h2>
                 </div>
-                <p>Here, you'll find a collection of my <span>work, skills, and experiences. </span>Feel free to explore and reach out if you have any questions or comments. Enjoy your visit!</p>
+                <p>Here, you'll find a collection of my <span>work, skills, and experiences.</span> Feel free to explore and reach out if you have any questions or comments. Enjoy your visit!</p>
             </div>
             <div class="link-buttons">
                 <a class="button" href="#projects">See my work</a>
                 <a class="button" href="#contact">Contact me</a>
             </div>
-        </div>  
-    </div>
-</div>
-<div class="about-container" id="about">
-    <div class="about-content">
-        <div class="about-title">
-            <h2><span>Who</span> am I?</h2>
-            <hr>
-        </div>
-        <div class="text-content">
-            <p>Hello! I'm an aspiring web developer with a passion for creating intuitive and accessible websites. With a strong foundation in HTML, CSS, and JavaScript, I've been honing my skills through continuous learning and personal projects. I'm a quick learner, a problem-solver, and I thrive in collaborative environments. I'm excited to bring my skills to a dynamic team where I can contribute to creating meaningful user experiences. I also compose music of my own. I have created many music tracks and sound effects for small games and love to be challenged with new complex tasks.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="image">
-                <img class="card-image" src="http://via.placeholder.com/175x175" alt="" srcset="">
-        </div>
-        <div class="name">
-        </div>
-        <div class="social-icons">
-            <a href=""><span><i class="ri-instagram-fill"></i></span></a>
-            <a href=""><span><i class="ri-github-fill"></i></span></a>
-            <a href=""><span><i class="ri-discord-fill"></i></span></a>
-            <a href=""><i class="ri-twitter-x-line"></i></span></a>
         </div>
     </div>
 </div>
+<section id="about-me-section">
+    <div class="about-container" id="about">
+        <div class="about-content">
+            <!-- Code Editor Section -->
+            <div class="editor">
+                <div class="editor-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                    <p>about-me.js</p>
+                </div>
+                <pre class="code">
+    <code id="code-content"></code>
+                </pre>
+            </div>
+            <!-- Image Section -->
+            <div class="image-container">
+                <img src="static/assets/placeholder.png" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="projects-main" id="projects">
     <div class="projects-title">
         <h2>My Projects</h2>
         <hr>
     </div>
-    <div class="bento-main">
-        <div class="row">
-            <div class="box" id="box1">
-                <div class="box-title">
-                    <h3>VK Gym Website</h3>
-                </div>
-                <div class="box-text">
-                    <p>Small school project trying to update the design of the VK Gym website.</p>
-                </div>
-                <div class="box-button">
-                    <a href="#home">Find out more</a>
-                </div>
-            </div>
-            <div class="box" id="box2">
-                <div class="box-title">
-                    <h3>"The Great Avalanche" - Soundtrack</h3>
-                </div>
-                <div class="box-text">
-                    <p>Soundtrack for a boss fight for small game studio. All rights reserved by Serati Studios.</p>
-                </div>
-                <div class="box-button">
-                    <a href="https://www.youtube.com/watch?v=uZ7CcNYtJX8" target="_blank">Find out more</a>
-                </div>
+    <div class="bento-grid">
+        <div class="bento-box box1">
+            <div class="bento-content">
+                <h3>VK Gym Website</h3>
+                <p>Small school project trying to update the design of the VK Gym website.</p>
+                <a href="#home" class="bento-link">Find out more</a>
             </div>
         </div>
-        <div class="row">
-            <div class="box" id="box3">
-                <div class="box-title">
-                    <h3>Geisha Trailer - Final Chapter</h3>
-                </div>
-                <div class="box-text">
-                    <p>Game trailer for small game. I was behind the sound effects, music and very minimal editing work. All rights reserved by Serati Studios</p>
-                </div>
-                <div class="box-button">
-                    <a href="https://www.youtube.com/watch?v=GXhpc6WTfhs" target="_blank">Find out more</a>
-                </div>
-            </div>
-            <div class="box" id="box4">
-                <div class="box-title">
-                    <h3>Geisha Trailer - Chapter 1</h3>
-                </div>
-                <div class="box-text">
-                    <p>Game trailer for small game. I was behind the sound effects, music and very minimal editing work. All rights reserved by Serati Studios</p>
-                </div>
-                <div class="box-button">
-                    <a href="https://www.youtube.com/watch?v=QN0_kldSg4Y" target="_blank">Find out more</a>
-                </div>
+        <div class="bento-box box2">
+            <div class="bento-content">
+                <h3>"The Great Avalanche" - Soundtrack</h3>
+                <p>Soundtrack for a boss fight for a small game studio. All rights reserved by Serati Studios.</p>
+                <a href="https://www.youtube.com/watch?v=uZ7CcNYtJX8" class="bento-link" target="_blank">Find out more</a>
             </div>
         </div>
+        <div class="bento-box box3 placeholder"></div>
+        <div class="bento-box box4 placeholder"></div>
+        <div class="bento-box box5 placeholder"></div>
+        <div class="bento-box box6 placeholder"></div>
     </div>
 </div>
+
 <div class="contact-container" id="contact">
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
-        
-    <input type="hidden" name="access_key" value="e135bda5-4419-4ab7-b78e-a2b55d26be4b">
+        <input type="hidden" name="access_key" value="e135bda5-4419-4ab7-b78e-a2b55d26be4b">
         <div class="contact-left-title">
             <h2>Get in touch</h2>
             <hr>
         </div>
-        <input id="name"type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+        <input id="name" type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
         <input type="email" name="email" placeholder="johnsmith@gmail.com" class="contact-inputs" required>
         <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
         <button type="submit">Submit <i class="ri-arrow-right-line"></i></button>
     </form>
     <div class="contact-right">
-        <img src="{% static "assets/contact-banner.png" %}" alt="">
+        <img src="{% static 'assets/contact-banner.png' %}" alt="">
     </div>
 </div>
+
 <script src="{% static "js/home.js" %}" defer></script>
-{% endblock%}
+<script src="{% static "js/particles.js" %}" defer></script>
+
+
+{% endblock %}
