@@ -626,7 +626,7 @@ pre .property {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 2rem;
     background: rgba(168, 127, 127, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -659,7 +659,7 @@ pre .property {
 /* Project Card Styles */
 .project-card {
     position: relative;
-    background: #fff;
+    background: var(--background-gradient2);
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -701,26 +701,31 @@ pre .property {
 .card-details h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #222;
+    color: var(--accent-color-1);
 }
 
 .card-details p {
     font-size: 1rem;
-    color: #555;
+    color: #fff;
     margin-bottom: 1rem;
 }
 
 .card-details .button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
+    border: var(--accent-color-1) 3px solid;
+    background-color: var(--background-gradient);
+    border-radius: 15px;
+    padding: 6px 10px;
+    color: var(--accent-color-1);
     text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
+    border:var(--accent-color-1) solid 3px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
 }
 
 .card-details .button:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-color-1);
+    color: #fff;
+    scale: 1.1;
 }
