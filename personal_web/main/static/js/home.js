@@ -1,28 +1,37 @@
-const dynamicText = document.querySelector("h1 span");
-const words = ["Frontend Designer", "Backend Developer", "Flutter Developer"]
+const dynamicText = document.querySelector(".typing");
+const cursor = document.querySelector(".cursor");
+const words = ["Frontend Designer", "Backend Developer", "Flutter Developer"];
 
 let wordIndex = 0;
 let charIndex = 0;
-let isDeleting = false
+let isDeleting = false;
 
 const typeEffect = () => {
-    const currentWord = words[wordIndex]
-    const currentChar = currentWord.substring(0, charIndex)
-    dynamicText.textContent = currentChar;
+    const currentWord = words[wordIndex];
+    const currentText = currentWord.substring(0, charIndex);
+    dynamicText.textContent = currentText;
 
-    if(!isDeleting && charIndex < currentWord.length){
+    if (!isDeleting && charIndex < currentWord.length) {
+        // Typing characters
         charIndex++;
         setTimeout(typeEffect, 65);
-    } else if(isDeleting && charIndex > 0){
+    } else if (isDeleting && charIndex > 0) {
+        // Deleting characters
         charIndex--;
-        setTimeout(typeEffect, 65);
-    }else{
+        setTimeout(typeEffect, 50);
+    } else {
+        // Pause and switch to the next word
         isDeleting = !isDeleting;
-        wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-        setTimeout(typeEffect, 1200);
+
+        if (!isDeleting) {
+            wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+        }
+
+        setTimeout(typeEffect, 1200); // Pause before switching
     }
-}
-typeEffect()
+};
+
+typeEffect();
 
 document.addEventListener("DOMContentLoaded", () => {
     const codeContent = document.getElementById("code-content");
@@ -42,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "description": "I am an aspiring web developer with a passion for 
     creating innovative solutions with creative interfaces",
     "education": "A-Level Computer Science",
-    "location": "Bognor Regis, West Sussex, UK"
+    "location": "West Sussex, UK"
   },
   "contact": {
     "email": "patryk.lickowski2711@gmail.com",
@@ -66,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Re-append the cursor to ensure it's at the end of the text
             codeContent.appendChild(cursor);
 
-            setTimeout(typeCode, 25); // Adjust speed of typing
+            setTimeout(typeCode, 35); // Adjust speed of typing
         } else {
             // Start the blinking effect after typing is complete
             cursor.classList.add("blinking");
@@ -88,5 +97,18 @@ document.addEventListener("DOMContentLoaded", function () {
             move: { enable: true, speed: 2 },
         },
         retina_detect: true,
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const gridItems = document.querySelectorAll(".grid-item");
+
+    gridItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            // Toggle a modal or expand the grid tile for detailed view
+            alert(`You clicked on ${item.dataset.info}`);
+        });
     });
 });

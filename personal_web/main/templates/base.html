@@ -3,21 +3,25 @@
 <html lang="en">
 <head>
     {% block head %}
-    {% endblock%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patryk Lickowski | Portfolio</title>
-    <link rel="stylesheet" href="{% static "css/base-styles.css" %}">
-    <link rel="icon" href="{% static "assets/favicon.png" %}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
-    rel="stylesheet"
-    />   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all.min.css">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="{% static 'css/base-styles.css' %}">
+    <link rel="icon" href="{% static 'assets/favicon.png' %}">
+    
+    <!-- External Libraries -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+    {% endblock %}
 </head>
-<div id="particles-js"></div>
-<body id="body">
+<body>
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
     <header class="header">
         <div class="logo"><a href="#home">Patryk <span>Lickowski</span></a></div>
         <input type="checkbox" id="check"/>
@@ -32,14 +36,39 @@
             <a href="#contact" class="hire-btn" style="--i:3;">Hire Me</a> 
         </nav>
     </header>
+
+    <!-- Main Content -->
     {% block content %}
-    {% endblock%}
+    {% endblock %}
+
+    <!-- Footer Section -->
     <footer>
         <div class="footer-container">
             <p>Copyright <span>&copy;</span> 2024 Patryk Lickowski</p>
         </div>
     </footer>
-    <script src="static/js/base.js"></script>
+
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
+    <!-- Static JS -->
+    <script src="{% static 'js/base.js' %}"></script>
+
+    <!-- Particles.js Initialization -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 150, density: { enable: true, value_area: 2000 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.3 },
+                    size: { value: 3 },
+                    move: { enable: true, speed: 2 },
+                },
+                retina_detect: true,
+            });
+        });
+    </script>
 </body>
 </html>

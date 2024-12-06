@@ -9,37 +9,62 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 {% endblock %}
 {% block content %}
-<div id="particles-js"></div>
 <div class="main-content" id="home">
     <div class="home-container">
         <!-- Left side: Profile Image -->
-        
-        <div class="about-image">
-            <img src="static/assets/icons.png" alt="icons" />
-        </div>
-        <div class="text-container">
-            <div class="title">
-                <h1>Hey! 👋 I am a <span class="highlight"></span></h1>
-            </div>
-            <div class="text-content">
-                <div class="sub-title">
-                    <h2>Welcome to my <span>portfolio!</span></h2>
+        <div class="hero-image-card">
+            <img src="/static/assets/placeholder.png" alt="Photo of Me" />
+            <div class="hero-details">
+                <div class="text-container">
+                    <div class="title">
+                        <h1>Hey! 👋 I'm Patryk, I'm a :</h1>
+                        <div class="type-text">
+                            <h1><span class="typing"></span><span class="cursor"></span><h1>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <div class="sub-title">
+                            <h2>Welcome to my <span>portfolio!</span></h2>
+                        </div>
+                        <p>Here, you'll find a collection of my <span>work, skills, and experiences.</span> Feel free to explore and reach out if you have any questions or comments. Enjoy your visit!</p>
+                    </div>
+                    <div class="link-buttons">
+                        <a class="button" href="static/cv.txt" download> Download my CV</a>
+                        <a class="button" href="#projects">See my work</a>
+                    </div>
                 </div>
-                <p>Here, you'll find a collection of my <span>work, skills, and experiences.</span> Feel free to explore and reach out if you have any questions or comments. Enjoy your visit!</p>
             </div>
-            <div class="link-buttons">
-                <a class="button" href="#projects">See my work</a>
-                <a class="button" href="#contact">Contact me</a>
-            </div>
-        </div>
+          </div>
+          </div>
     </div>
 </div>
 <section id="about-me-section">
     <div class="about-container" id="about">
         <div class="about-content">
+            <div class="cube-container">
+                <div class="cube">
+                  <div class="face front">
+                    <img src="/static/assets/js.png" alt="JavaScript">
+                  </div>
+                  <div class="face back">
+                    <img src="/static/assets/html.png" alt="HTML">
+                  </div>
+                  <div class="face left">
+                    <img src="/static/assets/css.png" alt="CSS">
+                  </div>
+                  <div class="face right">
+                    <img src="/static/assets/flutter.png" alt="Flutter">
+                  </div>
+                  <div class="face top">
+                    <img src="/static/assets/python.png" alt="Python">
+                  </div>
+                  <div class="face bottom">
+                    <img src="/static/assets/django.png" alt="Django">
+                  </div>
+                </div>
+              </div>
             <!-- Code Editor Section -->
             <div class="editor">
                 <div class="editor-header">
@@ -52,41 +77,44 @@
     <code id="code-content"></code>
                 </pre>
             </div>
-            <!-- Image Section -->
-            <div class="image-container">
-                <img src="static/assets/placeholder.png" alt="Profile Picture">
+        </div>
+    </div>
+</section>
+<section id="projects-section">
+    <div class="projects-container">
+        <div class="projects-title">
+            <h2>Recent projects</h2>
+            <hr>
+        </div>
+        <div class="projects-grid">
+            <!-- Project Card -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <div class="card-details">
+                    <h3>Portfolio Website</h3>
+                    <p>A sleek and responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <div class="card-details">
+                    <h3>To-Do List App</h3>
+                    <p>A Flutter-based mobile app for managing tasks effectively.</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <div class="card-details">
+                    <h3>Brand Identity Design</h3>
+                    <p>Creative logo and branding package for a local startup.</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-<div class="projects-main" id="projects">
-    <div class="projects-title">
-        <h2>My Projects</h2>
-        <hr>
-    </div>
-    <div class="bento-grid">
-        <div class="bento-box box1">
-            <div class="bento-content">
-                <h3>VK Gym Website</h3>
-                <p>Small school project trying to update the design of the VK Gym website.</p>
-                <a href="#home" class="bento-link">Find out more</a>
-            </div>
-        </div>
-        <div class="bento-box box2">
-            <div class="bento-content">
-                <h3>"The Great Avalanche" - Soundtrack</h3>
-                <p>Soundtrack for a boss fight for a small game studio. All rights reserved by Serati Studios.</p>
-                <a href="https://www.youtube.com/watch?v=uZ7CcNYtJX8" class="bento-link" target="_blank">Find out more</a>
-            </div>
-        </div>
-        <div class="bento-box box3 placeholder"></div>
-        <div class="bento-box box4 placeholder"></div>
-        <div class="bento-box box5 placeholder"></div>
-        <div class="bento-box box6 placeholder"></div>
-    </div>
-</div>
-
 <div class="contact-container" id="contact">
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
         <input type="hidden" name="access_key" value="e135bda5-4419-4ab7-b78e-a2b55d26be4b">
@@ -99,13 +127,9 @@
         <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
         <button type="submit">Submit <i class="ri-arrow-right-line"></i></button>
     </form>
-    <div class="contact-right">
-        <img src="{% static 'assets/contact-banner.png' %}" alt="">
-    </div>
 </div>
 
 <script src="{% static "js/home.js" %}" defer></script>
-<script src="{% static "js/particles.js" %}" defer></script>
 
 
 {% endblock %}

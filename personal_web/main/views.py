@@ -6,3 +6,9 @@ def home(request):
         'title': 'Patryk Lickowski | Home',
     }
     return render(request, "home.html", context)
+
+def testing(request):
+    context = {
+        'title': 'Testing'
+    }
+    return render(request, 'testing.html', context)

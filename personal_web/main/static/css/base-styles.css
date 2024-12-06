@@ -1,26 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+:root {
+    --primary-text: #E8E8E8;       /* Light gray for primary text */
+    --secondary-text: #B0BEC5;    /* Muted gray for secondary text */
+    --accent-color-1: #00A8CC;    /* Bright cyan for accents */
+    --accent-color-2: #F39C12;    /* Vibrant orange for accents */
+    --border-color: #34495E;      /* Dark gray-blue for borders and dividers */
+    --success-color: #2ECC71;     /* Green for success messages */
+    --warning-color: #F1C40F;     /* Yellow for warnings */
+    --error-color: #E74C3C;       /* Red for errors */
+    --button-hover: #3A6073;      /* Darker navy-blue for button hover effects */
+    --card-bg: #243b4a;           /* Slightly lighter navy for card backgrounds */
+    --background-gradient: linear-gradient(135deg, #1b2a34, #2c3e50); /* Page background gradient */
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Inter';
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
-.main-container{
+
+.main-container {
     display: flex;
     flex-direction: column;
 }
-body{
+
+body {
     min-height: 100vh;
     overflow-x: hidden;
-    background: #121212;
+    background: var(--background-gradient);
 }
-.header{
+
+.header {
     position: sticky;
     top: 0;
     left: 0;
@@ -33,7 +49,8 @@ body{
     transition: all 0.3s ease-in-out;
     background: transparent;
 }
-.header::before{
+
+.header::before {
     content: '';
     position: absolute;
     top: 0;
@@ -42,48 +59,54 @@ body{
     height: 100%;
     z-index: -1;
 }
-.header.scrolled{
-    background-color: #121212;
+
+.header.scrolled {
+    background-color: var(--background-gradient);
 }
-.logo a{
+
+.logo a {
     text-decoration: none;
     font-size: 1.9rem;
-    color: #fff;
+    color: var(--primary-text);
     margin: auto 0;
     font-weight: 800;
     cursor: pointer;
 }
-.logo span{
-    color: #4CAF50;
+
+.logo span {
+    color: var(--accent-color-1);
 }
-.navbar a{
+
+.navbar a {
     position: relative;
     text-decoration: none;
     font-size: 18px;
-    color: #fff;
+    color: var(--primary-text);
     font-weight: 500;
     margin-left: 45px;
     transition: all 0.3s ease-in-out;
 }
-.navbar a::before{
+
+.navbar a::before {
     content: '';
     position: absolute;
     top: 100%;
     left: 0;
     width: 0;
     height: 5%;
-    background: #4CAF50;
+    background: var(--accent-color-1);
     transition: .3s;
 }
-.navbar a:hover{
-    color: #4CAF50
+
+.navbar a:hover {
+    color: var(--accent-color-1);
 }
-/* Base button style */
+
 .navbar a.hire-btn {
-    text-decoration: none !important; /* Prevent underlining */
-    background: none;
-    border: #4CAF50 4px solid;
-    color: #4CAF50;
+    text-decoration: none !important;
+    background: var(--background-gradient);
+    border: var(--accent-color-1) 4px solid;
+    color: var(--accent-color-1);
     padding: 10px 20px;
     border-radius: 15px;
     font-weight: 600;
@@ -91,55 +114,62 @@ body{
     display: inline-block;
 }
 
-/* Hover styles */
 .navbar a.hire-btn:hover {
-    text-decoration: none !important; /* Ensure underline is prevented */
-    background: #4CAF50;
-    color: #fff;
+    text-decoration: none !important;
+    background: var(--accent-color-1);
+    color: var(--primary-text);
     transform: scale(1.1);
-    border: #4CAF50 4px solid;
+    border: var(--accent-color-1) 4px solid;
 }
 
-/* Prevent global or inherited hover rules from applying */
 .navbar a.hire-btn:hover::before {
-    display: none !important; /* Suppress pseudo-element if it’s causing underline */
+    display: none !important;
 }
-.navbar a:hover::before{
+
+.navbar a:hover::before {
     width: 100%;
 }
-#check{
+
+#check {
     display: none;
 }
-.icons{
+
+.icons {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--primary-text);
     cursor: pointer;
     display: none;
     margin: 0;
 }
 
-@media (max-width: 1041px){
-    .header{
+@media (max-width: 1041px) {
+    .header {
         padding: 1.15rem 5%;
     }
-    .footer-container p{
+
+    .footer-container p {
         font-size: 12px;
     }
 }
-@media (max-width: 921px){
-    .icons{
+
+@media (max-width: 921px) {
+    .icons {
         display: block;
     }
-    #check:checked~.icons #menu-btn{
+
+    #check:checked~.icons #menu-btn {
         display: none;
     }
-    .icons #close-btn{
+
+    .icons #close-btn {
         display: none;
     }
-    #check:checked~.icons #close-btn{
+
+    #check:checked~.icons #close-btn {
         display: block;
     }
-    .navbar{
+
+    .navbar {
         position: absolute;
         top: 100%;
         left: 0;
@@ -151,10 +181,12 @@ body{
         overflow: hidden;
         transition: .3s ease;
     }
-    #check:checked~.navbar{
+
+    #check:checked~.navbar {
         height: 13rem;
     }
-    .navbar a{
+
+    .navbar a {
         display: block;
         font-size: 1.1rem;
         margin: 1.5rem 0;
@@ -163,43 +195,47 @@ body{
         opacity: 0;
         transition: .3s ease;
     }
-    #check:checked~.navbar a{
+
+    #check:checked~.navbar a {
         transform: translateY(0);
         transition-delay: calc(.15s * var(--i));
         opacity: 1;
     }
 }
-footer{
+
+footer {
     margin-top: 50px;
     position: sticky;
     top: 100%;
     width: 100%;
 }
-.footer-container{
+
+.footer-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 10vh;
-    background-color: #121212;
     padding: 12px 16px;
 }
-.footer-container p{
-    color: #fff;
+
+.footer-container p {
+    color: var(--primary-text);
 }
 
-
-body {
+body, html {
     margin: 0;
-    overflow-y: scroll; /* Allow vertical scrolling */
-    background-color: none; /* Dark background for contrast */
-    height: 200vh; /* Ensure there is enough content to scroll */
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensures particles stay behind all content */
-    background-color: #121212; /* Optional: a fallback background color */
+    z-index: -1;
+    background-color: transparent;
 }
