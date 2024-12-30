@@ -22,12 +22,15 @@ html, body {
 }
 #home{
     scroll-margin-block-start: 110px;
+    margin-bottom: 100px;
 }
 #about{
     scroll-margin-block-start: 110px;
+    margin-bottom: 100px;
 }
-#projects{
+#projects-section{
     scroll-margin-block-start: 110px;
+    margin-bottom: 300px;
 }
 
 .main-content{
@@ -622,6 +625,7 @@ pre .property {
 .projects-container {
     display: flex;
     width: 90%;
+    height: 65vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -637,7 +641,7 @@ pre .property {
     color: #fff;
     font-weight: 600;
     font-size: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
 }
 .projects-title hr{
     color: var(--accent-color-1);
@@ -675,13 +679,15 @@ pre .property {
 /* Image Styling */
 .project-card img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    transition: all 0.3 ease;
 }
 
 .project-card:hover img {
     transform: scale(1.1); /* Image zoom effect */
+    height: 200px;
 }
 
 /* Card Details */
